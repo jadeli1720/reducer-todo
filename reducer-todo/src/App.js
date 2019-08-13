@@ -45,15 +45,15 @@ function App() {
 //     setTodo([...todo, {...taskName, id:Date.now()}])
 //   }//does not work
 
-const addItem = taskName => {
-  const newTask = {
-    task: taskName,
-    id: Date.now(),
-    completed: false
-  };
-  setTodo([...todo, newTask]);
-  console.log(newTask, "New Task has been added");
-};
+// const addItem = taskName => {
+//   const newTask = {
+//     task: taskName,
+//     id: Date.now(),
+//     completed: false
+//   };
+//   setTodo([...todo, newTask]);
+//   console.log(newTask, "New Task has been added");
+// };
 
   const toggleTask = id => {
     console.log(id);
@@ -68,26 +68,26 @@ const addItem = taskName => {
     );
   }
 
-  const clearCompleted = () => {
-    setTodo(todo.filter(task => !task.completed)
-    )
-  }
+  // const clearCompleted = () => {
+  //   setTodo(todo.filter(task => !task.completed)
+  //   )
+  // }
 
   return (
     <div className="App">
       <div className="header">
         <h2>Jade's Todo App!</h2>
         <TodoForm 
-                  todo={todo}
-                  addItem={addItem}
+                  todo={state.todoData}
+                  // addItem={addItem}
         />
       </div>
       <TodoList
-          todoItem={todo}
-          toggleTask={toggleTask}
-          clearCompleted={clearCompleted}
+          todoItem={state.todoData}
+          // toggleTask={toggleTask}
+          // clearCompleted={clearCompleted}
         />
-        <button className="clear-btn" onClick={clearCompleted}>Clear Completed</button>
+        {/* <button className="clear-btn" onClick={clearCompleted}>Clear Completed</button> */}
     </div>
   );
 }
