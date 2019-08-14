@@ -15,7 +15,6 @@ console.log('TodoList',props)
                 toggleTask={props.dispatch}
                 />
             ))}
-            {/* <button class="clear-btn" onClick={props.clearCompleted}>Clear Completed</button> */}
         </div>
     )
 }
