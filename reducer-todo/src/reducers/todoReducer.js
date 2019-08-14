@@ -1,11 +1,13 @@
 // Export Two Things - initialState, reducer fn
 
 export const initialState = {
-    todoData: [{
-        task: 'Learn about reducers',
-        completed: false,
-        id: 3892987589
-    }]
+    todoData: [
+        {
+            task: 'Learn about reducers',
+            completed: false,
+            id: 3892987589
+        }
+    ]
 }
 
 
@@ -18,16 +20,16 @@ export const todoReducer = (state, action) => {
                 completed: false,
                 id: Date.now()
             };
-            console.log('reducer',newTask)
-            return {...state, todoData: [...state.todoData, newTask]
+            // console.log('reducer',newTask)
+            return {
+                ...state, todoData: [...state.todoData, newTask]
             }
         case 'TOGGLE_ITEM':
-            return {
-                ...state.todoData,
-                
-            }
+            
+
 
         default:
             return state;
     }
 };
+

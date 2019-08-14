@@ -41,49 +41,20 @@ function App() {
   //reducer
   const [state, dispatch]= useReducer(todoReducer, initialState);
 
-//  const addItem = taskName => {
-//     setTodo([...todo, {...taskName, id:Date.now()}])
-//   }//does not work
-
-// const addItem = taskName => {
-//   const newTask = {
-//     task: taskName,
-//     id: Date.now(),
-//     completed: false
-//   };
-//   setTodo([...todo, newTask]);
-//   console.log(newTask, "New Task has been added");
-// };
-
-  const toggleTask = id => {
-    console.log(id);
-    setTodo(
-      todo.map(task => {
-        if (task.id === id) {
-          return {...task, completed: !task.completed};
-        } else {
-          return task;
-        }
-      })
-    );
-  }
-
-  // const clearCompleted = () => {
-  //   setTodo(todo.filter(task => !task.completed)
-  //   )
-  // }
 
   return (
     <div className="App">
       <div className="header">
         <h2>Jade's Todo App!</h2>
         <TodoForm 
-                  todo={state.todoData}
-                  // addItem={addItem}
+            state={state.todoData}
+            dispatch={dispatch}
         />
       </div>
+
       <TodoList
           todoItem={state.todoData}
+          dispatch={dispatch}
           // toggleTask={toggleTask}
           // clearCompleted={clearCompleted}
         />
@@ -93,3 +64,22 @@ function App() {
 }
 
 export default App;
+
+
+  // const toggleTask = id => {
+  //   console.log(id);
+  //   setTodo(
+  //     todo.map(task => {
+  //       if (task.id === id) {
+  //         return {...task, completed: !task.completed};
+  //       } else {
+  //         return task;
+  //       }
+  //     })
+  //   );
+  // }
+
+  // const clearCompleted = () => {
+  //   setTodo(todo.filter(task => !task.completed)
+  //   )
+  // }
