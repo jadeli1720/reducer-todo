@@ -55,8 +55,6 @@ function App() {
       <TodoList
           todoItem={state.todoData}
           dispatch={dispatch}
-          // toggleTask={toggleTask}
-          // clearCompleted={clearCompleted}
         />
         {/* <button className="clear-btn" onClick={clearCompleted}>Clear Completed</button> */}
     </div>
